@@ -1,0 +1,123 @@
+import{_ as n}from"./plugin-vue_export-helper.21dcd24c.js";import{o as s,c as a,a as p}from"./app.50041772.js";const t={},e=p(`<h1 id="_1-\u95ED\u5305" tabindex="-1"><a class="header-anchor" href="#_1-\u95ED\u5305" aria-hidden="true">#</a> 1. \u95ED\u5305</h1><h2 id="_1-1-\u4EC0\u4E48\u662F\u95ED\u5305" tabindex="-1"><a class="header-anchor" href="#_1-1-\u4EC0\u4E48\u662F\u95ED\u5305" aria-hidden="true">#</a> 1.1 \u4EC0\u4E48\u662F\u95ED\u5305</h2><ul><li>closure\u662F\u4E00\u4E2A<strong>\u51FD\u6570\u4EE5\u53CA\u5176\u6346\u7ED1\u7684\u8BCD\u6CD5\u73AF\u5883</strong>\u7684\u5F15\u7528\u7684\u7EC4\u5408\u3002</li><li>\u6362\u800C\u8A00\u4E4B\uFF0C<strong>closure\u53EF\u4EE5\u4ECE\u5185\u90E8\u51FD\u6570\u8BBF\u95EE\u5916\u90E8\u51FD\u6570\u7684\u4F5C\u7528\u57DF</strong>\u3002</li><li><strong>\u51FD\u6570\u6267\u884C\u5BFC\u81F4\u51FD\u6570\u88AB\u5B9A\u4E49(\u51FD\u6570\u8868\u8FBE\u5F0F | \u51FD\u6570\u58F0\u660E)</strong></li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">cb</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token function">cb</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>  <span class="token comment">// n is not defined</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// \u6B64\u5904\u5E76\u975Eclosure\uFF0C\u56E0\u6B64 test()\u5E76\u4E0D\u80FD\u83B7\u53D6\u5230 \u53D8\u91CFn</span>
+<span class="token comment">// \u82E5\u662F\u56E0\u4E3A\uFF0C\u6B64\u65F6\u53EF\u4EE5\u79F0\u4E3Aclosure</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_1-2-\u5E38\u89C1\u5F62\u5F0F" tabindex="-1"><a class="header-anchor" href="#_1-2-\u5E38\u89C1\u5F62\u5F0F" aria-hidden="true">#</a> 1.2 \u5E38\u89C1\u5F62\u5F0F</h2><ol><li>\u51FD\u6570\u8FD4\u56DE\u503C\u662F\u51FD\u6570</li><li>\u51FD\u6570\u8FD4\u56DE\u7684\u53D8\u91CF\u662F\u51FD\u6570</li><li>\u5168\u5C40\u53D8\u91CF\u5B9A\u4E49\u7684\u95ED\u5305</li></ol><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 1. \u51FD\u6570\u8FD4\u56DE\u503C\u662F\u51FD\u6570</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">3</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 2. \u51FD\u6570\u8FD4\u56DE\u7684\u53D8\u91CF\u662F\u51FD\u6570</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">3</span>
+    <span class="token keyword">let</span> <span class="token function-variable function">n</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> n
+<span class="token punctuation">}</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 3. \u5168\u5C40\u53D8\u91CF\u5B9A\u4E49\u7684\u95ED\u5305</span>
+<span class="token keyword">let</span> outter
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">10</span>
+    <span class="token function-variable function">outter</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">outter</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 4. \u51FD\u6570\u7684\u53C2\u6570\u4E3A\u4E00\u4E2A\u51FD\u6570</span>
+<span class="token keyword">let</span> <span class="token function-variable function">inner</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">let</span> <span class="token function-variable function">n</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">inner</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 5. \u8FED\u4EE3\u5668</span>
+<span class="token keyword">var</span> add <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">++</span>count
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">// 1</span>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">// 2</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_1-3-\u7ECF\u5178\u95EE\u9898" tabindex="-1"><a class="header-anchor" href="#_1-3-\u7ECF\u5178\u95EE\u9898" aria-hidden="true">#</a> 1.3 \u7ECF\u5178\u95EE\u9898</h2><p>\u5FAA\u73AF\u8D4B\u503C</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> arr
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> bar <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    bar<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 5 5 5 5 5</span>
+<span class="token comment">// line80\u7684 for\u5FAA\u73AF\u4E2D\uFF0Cvar\u4E0D\u5B58\u5728\u5757\u7EA7\u4F5C\u7528\u57DF\uFF0C\u5FAA\u73AF\u4F53\u5185\u7ED9arr\u4E0B\u68070-4\u7684\u4F4D\u7F6E\u5168\u8D4B\u503C\u4E3A\u4E00\u4E2A\u51FD\u6570</span>
+<span class="token comment">// line81 ~ line83 \u6784\u6210 closure\uFF0C\u56E0\u6B64\u8FD95\u4E2Aclosure \u5747\u53EF\u4EE5\u8BBF\u95EE\u5230\u5916\u90E8\u7684 i\uFF0C\u5FAA\u73AF\u7ED3\u675F\u540E\uFF0Ci = 5</span>
+<span class="token comment">// \u6B64\u65F6line90\u6267\u884C\u540E\uFF0C\u5747\u6253\u5370 5</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>\u6B63\u786E\u7684\u5FAA\u73AF\u8D4B\u503C</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">j</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">log</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> arr
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> bar <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    bar<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// \u6539\u9020\u4E3AIIFE\u540E\uFF0Cfor\u5FAA\u73AF\u6BCF\u8D70\u4E00\u6B65\uFF0C\u90FD\u5C06i\u4F20\u5165\uFF0Cj\u5F97\u5230\u7684\u5C31\u662Fi\u7684\u503C\uFF0C\u5185\u90E8\u51FD\u6570\u518D\u8BFB\u53D6\u5916\u5C42\u4F5C\u7528\u57DF\u7684j\uFF0C\u4ECE\u800C\u6253\u5370\u51FA0 ~ 4</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_1-4-\u8BD5\u9898" tabindex="-1"><a class="header-anchor" href="#_1-4-\u8BD5\u9898" aria-hidden="true">#</a> 1.4 \u8BD5\u9898</h2><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">n<span class="token punctuation">,</span> o</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token function-variable function">fn</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">m</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">fn</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>   <span class="token comment">// n = 0, o = undefined, closure fn\u4E00\u76F4\u5F15\u7528\u7740n, n = 0</span>
+a<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>         <span class="token comment">// fn(1, 0) n = 1, o = 0</span>
+a<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>         <span class="token comment">// fn(2, 0) n = 2, o = 0</span>
+a<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>         <span class="token comment">// fn(3, 0) n = 3, o = 0</span>
+
+
+<span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>   <span class="token comment">// n = 0, o = undefined</span>
+    <span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>      <span class="token comment">// fn(1, 0), n = 1, o = 0</span>
+    <span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>      <span class="token comment">// fn(2, 1), n = 2, o = 1</span>
+    <span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>      <span class="token comment">// fn(3, 2), n = 3, o = 2</span>
+
+<span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>     <span class="token comment">// n = 0, o = undefined, fn(1) =&gt; fn(1, 0), n = 1, o = 0</span>
+c<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>                 <span class="token comment">// fn(2) =&gt; fn(2, 1), n = 2, o = 1</span>
+c<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>                 <span class="token comment">// fn(3) =&gt; fn(3, 1), n = 3, o = 1</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,14),o=[e];function c(i,l){return s(),a("div",null,o)}var r=n(t,[["render",c],["__file","closure.html.vue"]]);export{r as default};
